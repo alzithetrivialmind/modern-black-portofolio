@@ -83,26 +83,74 @@ export const EDUCATION = [
 export const PROJECTS = [
     {
         id: 1,
+        title: "SecureBatch QR",
+        description: "A secure batch QR code contact maker that generates multiple QR codes with vCard data securely.",
+        tech: ["React", "TypeScript", "Vite", "QR Code", "vCard"],
+        link: "https://qr-code-contact-maker.vercel.app/",
+        github: "https://github.com/alzithetrivialmind/securebatch-qr",
+        image: "/securebatch.png"
+    },
+    {
+        id: 2,
+        title: "Palma Shipyard",
+        description: "Official corporate website for PT Palma Progress Shipyard, showcasing facilities and services.",
+        tech: ["WordPress", "Elementor", "cPanel", "CSS"],
+        link: "https://www.palmashipyard.com",
+        github: "", // Closed source
+        image: "/palma.jpg"
+    },
+    {
+        id: 3,
+        title: "Digisentral Solusi",
+        description: "Digital transformation consultancy website offering ERP and custom software solutions.",
+        tech: ["WordPress", "Elementor", "cPanel"],
+        link: "https://www.digisentralsolusi.id",
+        github: "", // Closed source
+        image: "/digisentral.jpg"
+    },
+    {
+        id: 4,
         title: "ERPNext Implementation",
         description: "End-to-end implementation of ERPNext for shipyard operations, including legacy data migration and custom workflow development.",
         tech: ["ERPNext", "Python", "MariaDB", "Linux"],
         link: "#",
+        github: "#",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
     },
     {
-        id: 2,
+        id: 5,
         title: "IoT SmartLock System",
         description: "Developed a smart lock system using ESP32 and Arduino, featured in the Ming Chi University workshop.",
         tech: ["C++", "ESP32", "IoT", "Arduino"],
         link: "#",
+        github: "#",
         image: "https://images.unsplash.com/photo-1558002038-1091a1661116?q=80&w=2670&auto=format&fit=crop"
     },
     {
-        id: 3,
+        id: 6,
         title: "Network Security Hardening",
         description: "Fortified network perimeters against various attack vectors using pfSense and open-source firewalls.",
         tech: ["pfSense", "Networking", "Security", "Firewall"],
         link: "#",
+        github: "#",
         image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop"
+    },
+    {
+        id: 7,
+        title: "Disciplinr",
+        description: "A time boxing and blocking management app featuring analytics, trend analysis, and automatic scoring to boost productivity.",
+        tech: ["Laravel", "PHP", "Bootstrap", "SQLite"],
+        link: "https://github.com/alzithetrivialmind/Disciplinr-Time-Boxing-and-Blocking-Management-App",
+        github: "https://github.com/alzithetrivialmind/Disciplinr-Time-Boxing-and-Blocking-Management-App",
+        image: "/disciplinr.png"
+    },
+    {
+        id: 8,
+        title: "Personal Money Manager",
+        description: "A comprehensive money management app with multi-currency support, savings goals, and detailed financial reports.",
+        tech: ["React Native", "Expo", "TypeScript", "SQLite"],
+        link: "https://github.com/alzithetrivialmind/personalmoneymanager",
+        github: "https://github.com/alzithetrivialmind/personalmoneymanager",
+        image: "/moneymanager.png"
     }
 ];

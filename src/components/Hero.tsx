@@ -6,9 +6,9 @@ const Hero = () => {
     return (
         <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
             {/* Background Gradient */}
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-neutral-900 via-neutral-950 to-neutral-950 -z-10" />
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-900/10 rounded-full blur-[128px] pointer-events-none" />
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-900/10 rounded-full blur-[128px] pointer-events-none" />
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-50/50 via-white to-white dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-950 -z-10 transition-colors duration-500" />
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-200/40 dark:bg-purple-900/10 rounded-full blur-[128px] pointer-events-none transition-colors duration-500" />
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-200/40 dark:bg-indigo-900/10 rounded-full blur-[128px] pointer-events-none transition-colors duration-500" />
 
 
             <div className="max-w-6xl w-full px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -18,7 +18,7 @@ const Hero = () => {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.2, duration: 0.6 }}
-                        className="text-indigo-400 mb-4 font-bold tracking-widest text-sm uppercase"
+                        className="text-indigo-600 dark:text-indigo-400 mb-4 font-bold tracking-widest text-sm uppercase transition-colors"
                     >
                         Hello, I am
                     </motion.p>
@@ -26,15 +26,15 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
-                        className="text-6xl md:text-8xl font-black tracking-tighter text-white mb-6 leading-[0.9]"
+                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-neutral-900 dark:text-white mb-6 leading-[0.9] transition-colors"
                     >
-                        {PROFILE.name}<span className="text-indigo-500">.</span>
+                        {PROFILE.name}<span className="text-indigo-600 dark:text-indigo-500 transition-colors">.</span>
                     </motion.h1>
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
-                        className="text-2xl md:text-3xl text-neutral-400 font-semibold mb-8 tracking-tight"
+                        className="text-xl sm:text-2xl md:text-3xl text-neutral-600 dark:text-neutral-400 font-semibold mb-8 tracking-tight transition-colors"
                     >
                         {PROFILE.title}
                     </motion.h2>
@@ -42,7 +42,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5, duration: 0.6 }}
-                        className="text-lg text-neutral-400 max-w-lg leading-relaxed mb-10"
+                        className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 max-w-lg leading-relaxed mb-10 transition-colors"
                     >
                         {PROFILE.about}
                     </motion.p>
@@ -52,10 +52,10 @@ const Hero = () => {
                         transition={{ delay: 0.6 }}
                         className="flex gap-4"
                     >
-                        <a href="#contact" className="px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-neutral-200 transition-colors">
+                        <a href="#contact" className="px-8 py-3 bg-neutral-900 text-white dark:bg-white dark:text-black font-bold rounded-full hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors">
                             Contact Me
                         </a>
-                        <a href="#experience" className="px-8 py-3 border border-neutral-700 text-white font-medium rounded-full hover:bg-neutral-900 transition-colors">
+                        <a href="#experience" className="px-8 py-3 border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-white font-medium rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors">
                             View Work
                         </a>
                     </motion.div>
@@ -75,7 +75,7 @@ const Hero = () => {
                             transition={{ duration: 0.3 }}
                             src={PROFILE.image}
                             alt={PROFILE.name}
-                            className="relative w-72 h-72 md:w-96 md:h-96 object-cover rounded-2xl shadow-2xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500 z-10"
+                            className="relative w-72 h-72 md:w-96 md:h-96 object-cover rounded-2xl shadow-2xl border border-neutral-200 dark:border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500 z-10"
                         />
                     </div>
                 </motion.div>
@@ -91,7 +91,7 @@ const Hero = () => {
                     animate={{ y: [0, 10, 0] }}
                     transition={{ repeat: Infinity, duration: 2 }}
                 >
-                    <ArrowDown className="text-neutral-500" />
+                    <ArrowDown className="text-neutral-400 dark:text-neutral-500 transition-colors" />
                 </motion.div>
             </motion.div>
         </section>

@@ -4,6 +4,7 @@ import { Download, Menu, X } from 'lucide-react';
 import ScrollProgress from './ScrollProgress';
 import CustomCursor from './CustomCursor';
 import Lenis from 'lenis';
+import ThemeToggle from './ThemeToggle';
 
 interface LayoutProps {
     children: ReactNode;
@@ -56,10 +57,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     ];
 
     return (
-        <div className="min-h-screen bg-neutral-950 text-neutral-200 font-sans selection:bg-indigo-500/30 selection:text-indigo-200 cursor-none">
+        <div className="min-h-screen bg-gray-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-200 font-sans selection:bg-indigo-500/30 selection:text-indigo-600 dark:selection:text-indigo-200 cursor-none transition-colors duration-300">
             <CustomCursor />
             <ScrollProgress />
-            <nav className="fixed top-0 left-0 w-full z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
+            <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-300">
                 <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
@@ -71,13 +72,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center gap-8">
-                        <div className="flex gap-6 text-sm font-medium text-neutral-400">
+                        <div className="flex gap-6 text-sm font-medium text-neutral-600 dark:text-neutral-400">
                             {navLinks.map(link => (
                                 <a
                                     key={link.name}
                                     href={link.href}
                                     onClick={(e) => handleNavClick(e, link.href)}
-                                    className="hover:text-white transition-colors relative group"
+                                    className="hover:text-black dark:hover:text-white transition-colors relative group"
                                 >
                                     {link.name}
                                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full" />
@@ -85,10 +86,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                             ))}
                         </div>
 
+                        <ThemeToggle />
+
                         <a
                             href="/resume.pdf"
                             download
-                            className="flex items-center gap-2 px-4 py-2 bg-white text-neutral-950 text-sm font-bold rounded-full hover:bg-neutral-200 transition-colors"
+                            className="flex items-center gap-2 px-4 py-2 bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 text-sm font-bold rounded-full hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors"
                         >
                             <Download size={16} />
                             <span className="hidden sm:inline">Resume</span>
@@ -96,12 +99,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <button
-                        className="md:hidden z-50 p-2 text-neutral-400 hover:text-white transition-colors"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
+                    <div className="flex items-center gap-4 md:hidden">
+                        <ThemeToggle />
+                        <button
+                            className="z-50 p-2 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors"
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        >
+                            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                        </button>
+                    </div>
 
                     {/* Mobile Navigation Overlay */}
                     <AnimatePresence>
@@ -110,14 +116,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
-                                className="fixed inset-0 bg-neutral-950 z-40 flex flex-col items-center justify-center space-y-8 md:hidden"
+                                className="fixed inset-0 bg-white dark:bg-neutral-950 z-40 flex flex-col items-center justify-center space-y-8 md:hidden"
                             >
                                 {navLinks.map((link) => (
                                     <a
                                         key={link.name}
                                         href={link.href}
                                         onClick={(e) => handleNavClick(e, link.href)}
-                                        className="text-2xl font-bold text-neutral-400 hover:text-white transition-colors"
+                                        className="text-2xl font-bold text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors"
                                     >
                                         {link.name}
                                     </a>
@@ -125,7 +131,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                                 <a
                                     href="/resume.pdf"
                                     download
-                                    className="flex items-center gap-2 px-6 py-3 bg-white text-neutral-950 text-lg font-bold rounded-full hover:bg-neutral-200 transition-colors mt-4"
+                                    className="flex items-center gap-2 px-6 py-3 bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 text-lg font-bold rounded-full hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors mt-4"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     <Download size={20} />
@@ -139,7 +145,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <main className="max-w-6xl mx-auto px-6 pt-24 pb-20">
                 {children}
             </main>
-            <footer className="border-t border-neutral-800 py-8 text-center text-neutral-500 text-sm">
+            <footer className="border-t border-neutral-200 dark:border-neutral-800 py-8 text-center text-neutral-500 text-sm transition-colors duration-300">
                 &copy; {new Date().getFullYear()} Alzi. All rights reserved.
             </footer>
         </div>
