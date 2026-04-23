@@ -19,6 +19,8 @@ export function Annotation({
   );
 }
 
+import { motion } from 'framer-motion';
+
 export function Arrow({
   className = "",
   rotate = 0,
@@ -27,12 +29,14 @@ export function Arrow({
   rotate?: number;
 }) {
   return (
-    <svg
+    <motion.svg
+      animate={{ y: [0, -5, 0], rotate }}
+      initial={{ rotate }}
+      transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
       viewBox="0 0 80 60"
       width="80"
       height="60"
       className={`text-marker ${className}`}
-      style={{ transform: `rotate(${rotate}deg)` }}
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
@@ -43,6 +47,6 @@ export function Arrow({
       <path d="M5 10 C 25 5, 55 30, 70 50" />
       <path d="M70 50 L 60 44" />
       <path d="M70 50 L 66 38" />
-    </svg>
+    </motion.svg>
   );
 }

@@ -84,15 +84,23 @@ export const PROJECTS = [
     {
         id: 0,
         title: "SnapCuller",
-        description: "The fastest photo culling and RAW sorting tool for professional photographers, featuring an ultra-lightweight engine for instant sorting with zero import lag.",
+        description: "Culling 1,000+ RAW images shouldn't take an hour. I built this because existing tools either bloated the system or required a subscription. It optimizes OS metadata reading for instant previews—built for speed, not for collecting user data.",
         tech: ["React", "TypeScript", "Tailwind", "Electron", "AI"],
         link: "https://www.snapculler.com",
         github: ""
     },
     {
+        id: 4,
+        title: "ERPNext Implementation",
+        description: "Bridging the gap between legacy processes and modern automation. I migrate fragmented legacy workflows into unified ERPNext ecosystems with a focus on long-term maintainability.",
+        tech: ["ERPNext", "Python", "MariaDB", "Linux"],
+        link: "#",
+        github: "#"
+    },
+    {
         id: 2,
         title: "Palma Shipyard",
-        description: "Designed and developed the official company profile website, establishing a strong digital presence for shipyard operations and facilities.",
+        description: "At PT Palma Progress Shipyard, I didn't just install software. I established a robust digital presence and unified operations by bridging legacy shipyard workflows with modern web technology.",
         tech: ["WordPress", "Elementor", "cPanel", "CSS"],
         link: "https://www.palmashipyard.com",
         github: "" // Closed source
@@ -104,14 +112,6 @@ export const PROJECTS = [
         tech: ["WordPress", "Elementor", "cPanel"],
         link: "https://www.digisentralsolusi.id",
         github: "" // Closed source
-    },
-    {
-        id: 4,
-        title: "ERPNext Implementation",
-        description: "End-to-end implementation capacity from zero to production, providing tailored ERPNext solutions for both cloud and on-premise environments.",
-        tech: ["ERPNext", "Python", "MariaDB", "Linux"],
-        link: "#",
-        github: "#"
     },
     {
         id: 1,

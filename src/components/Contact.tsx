@@ -23,7 +23,7 @@ const Contact = () => {
                 <div className="mt-20 grid gap-8 sm:grid-cols-2 md:grid-cols-3">
                     <a
                         href={`mailto:${PROFILE.social.email}`}
-                        className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 transition-all hover:bg-accent"
+                        className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 transition-colors duration-200 hover:bg-accent"
                     >
                         <div className="mb-4 text-ink-soft group-hover:text-marker transition-colors">
                             <Mail size={32} strokeWidth={1.5} />
@@ -37,7 +37,7 @@ const Contact = () => {
                             href={PROFILE.social.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 transition-all hover:bg-accent"
+                            className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 transition-colors duration-200 hover:bg-accent"
                         >
                             <div className="mb-4 text-ink-soft group-hover:text-marker transition-colors">
                                 <Linkedin size={32} strokeWidth={1.5} />
@@ -52,7 +52,7 @@ const Contact = () => {
                             href={PROFILE.social.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 transition-all hover:bg-accent"
+                            className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 transition-colors duration-200 hover:bg-accent"
                         >
                             <div className="mb-4 text-ink-soft group-hover:text-marker transition-colors">
                                 <Github size={32} strokeWidth={1.5} />
