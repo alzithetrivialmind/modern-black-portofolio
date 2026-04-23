@@ -20,7 +20,7 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <div className="mt-20 grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+                <div className="mt-20 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                     <a
                         href={`mailto:${PROFILE.social.email}`}
                         className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 transition-colors duration-200 hover:bg-accent"
@@ -29,7 +29,7 @@ const Contact = () => {
                             <Mail size={32} strokeWidth={1.5} />
                         </div>
                         <h3 className="font-display text-xl font-medium text-ink">Email</h3>
-                        <p className="mt-1 text-sm text-ink-soft truncate">{PROFILE.social.email}</p>
+                        <p className="mt-1 text-sm text-ink-soft truncate italic">zinzhy**@gmail.com</p>
                     </a>
 
                     {PROFILE.social.linkedin && (
@@ -44,6 +44,32 @@ const Contact = () => {
                             </div>
                             <h3 className="font-display text-xl font-medium text-ink">LinkedIn</h3>
                             <p className="mt-1 text-sm text-ink-soft truncate">Professional Profile</p>
+                        </a>
+                    )}
+
+                    {PROFILE.social.threads && (
+                        <a
+                            href={PROFILE.social.threads}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 transition-colors duration-200 hover:bg-accent"
+                        >
+                            <div className="mb-4 text-ink-soft group-hover:text-marker transition-colors">
+                                <svg 
+                                    viewBox="0 0 24 24" 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    strokeWidth="1.5" 
+                                    strokeLinecap="round" 
+                                    strokeLinejoin="round" 
+                                    className="w-8 h-8"
+                                >
+                                    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                                    <path d="M12 7c-2.761 0-5 2.239-5 5s2.239 5 5 5 5-2.239 5-5-2.239-5-5-5zm0 8c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3z"/>
+                                </svg>
+                            </div>
+                            <h3 className="font-display text-xl font-medium text-ink">Threads</h3>
+                            <p className="mt-1 text-sm text-ink-soft truncate">@x.alzii_</p>
                         </a>
                     )}
 

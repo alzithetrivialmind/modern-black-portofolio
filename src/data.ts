@@ -7,7 +7,8 @@ export const PROFILE = {
     social: {
         linkedin: "https://www.linkedin.com/in/itsalzi/",
         github: "https://github.com/alzithetrivialmind",
-        email: "alzi@example.com"
+        email: "zinzhy25@gmail.com",
+        threads: "https://www.threads.net/@x.alzii_"
     }
 };
 
