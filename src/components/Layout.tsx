@@ -1,8 +1,4 @@
-import React, { type ReactNode, useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Download, Menu, X } from 'lucide-react';
-import ScrollProgress from './ScrollProgress';
-import CustomCursor from './CustomCursor';
+import React, { type ReactNode, useEffect } from 'react';
 import Lenis from 'lenis';
 import ThemeToggle from './ThemeToggle';
 
@@ -11,7 +7,6 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const lenisRef = React.useRef<Lenis | null>(null);
 
     useEffect(() => {
@@ -45,108 +40,76 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         if (lenisRef.current) {
             lenisRef.current.scrollTo(href);
         }
-        setIsMenuOpen(false);
     };
 
     const navLinks = [
-        { name: "About", href: "#about" },
         { name: "Experience", href: "#experience" },
         { name: "Projects", href: "#projects" },
-        { name: "Education", href: "#education" },
+        { name: "Skills", href: "#skills" },
         { name: "Contact", href: "#contact" }
     ];
 
     return (
-        <div className="min-h-screen bg-gray-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-200 font-sans selection:bg-indigo-500/30 selection:text-indigo-600 dark:selection:text-indigo-200 cursor-none transition-colors duration-300">
-            <CustomCursor />
-            <ScrollProgress />
-            <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-300">
-                <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="text-xl font-bold tracking-tighter z-50 relative"
+        <div className="min-h-screen bg-canvas text-ink font-sans selection:bg-marker selection:text-primary-foreground transition-colors duration-300">
+            {/* Pill Navigation */}
+            <header className="pointer-events-none fixed inset-x-0 top-6 z-50 flex justify-center px-4">
+                <nav
+                    aria-label="Primary"
+                    className="nav-blur pointer-events-auto flex items-center gap-1 rounded-full border border-border/60 px-2 py-2 shadow-[0_8px_30px_-12px_rgb(0_0_0_/0.18)]"
+                >
+                    <a
+                        href="#"
+                        onClick={(e) => handleNavClick(e, 'top')}
+                        className="group flex items-center gap-1 rounded-full px-3 py-1.5 text-sm font-medium text-ink transition hover:bg-accent"
                     >
-                        A.
-                    </motion.div>
-
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center gap-8">
-                        <div className="flex gap-6 text-sm font-medium text-neutral-600 dark:text-neutral-400">
-                            {navLinks.map(link => (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    onClick={(e) => handleNavClick(e, link.href)}
-                                    className="hover:text-black dark:hover:text-white transition-colors relative group"
-                                >
-                                    {link.name}
-                                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full" />
-                                </a>
-                            ))}
-                        </div>
-
-                        <ThemeToggle />
-
-                        <a
-                            href="/resume.pdf"
-                            download
-                            className="flex items-center gap-2 px-4 py-2 bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 text-sm font-bold rounded-full hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors"
-                        >
-                            <Download size={16} />
-                            <span className="hidden sm:inline">Resume</span>
-                        </a>
-                    </div>
-
-                    {/* Mobile Menu Button */}
-                    <div className="flex items-center gap-4 md:hidden">
-                        <ThemeToggle />
-                        <button
-                            className="z-50 p-2 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors"
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        >
-                            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                        </button>
-                    </div>
-
-                    {/* Mobile Navigation Overlay */}
-                    <AnimatePresence>
-                        {isMenuOpen && (
-                            <motion.div
-                                initial={{ opacity: 0, y: -20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -20 }}
-                                className="fixed inset-0 bg-white dark:bg-neutral-950 z-40 flex flex-col items-center justify-center space-y-8 md:hidden"
+                        <span className="text-ink-soft">/Alzi</span>
+                        <span className="text-ink-soft/60">›</span>
+                        <span>Portfolio</span>
+                    </a>
+                    <span className="mx-1 hidden h-5 w-px bg-border sm:block" />
+                    <div className="hidden items-center gap-0.5 sm:flex">
+                        {navLinks.map((l) => (
+                            <a
+                                key={l.href}
+                                href={l.href}
+                                onClick={(e) => handleNavClick(e, l.href)}
+                                className="rounded-full px-3 py-1.5 text-sm font-medium text-ink-soft transition hover:bg-accent hover:text-ink"
                             >
-                                {navLinks.map((link) => (
-                                    <a
-                                        key={link.name}
-                                        href={link.href}
-                                        onClick={(e) => handleNavClick(e, link.href)}
-                                        className="text-2xl font-bold text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors"
-                                    >
-                                        {link.name}
-                                    </a>
-                                ))}
-                                <a
-                                    href="/resume.pdf"
-                                    download
-                                    className="flex items-center gap-2 px-6 py-3 bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 text-lg font-bold rounded-full hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors mt-4"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    <Download size={20} />
-                                    Resume
-                                </a>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-                </div>
-            </nav>
-            <main className="max-w-6xl mx-auto px-6 pt-24 pb-20">
+                                {l.name}
+                            </a>
+                        ))}
+                    </div>
+                    
+                    <div className="mx-1 sm:mx-2 flex items-center">
+                        <ThemeToggle />
+                    </div>
+
+                    <a
+                        href="/resume.pdf"
+                        download
+                        className="rounded-full bg-primary px-4 py-1.5 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+                    >
+                        Resume
+                    </a>
+                </nav>
+            </header>
+
+            <main className="max-w-6xl mx-auto px-6 pt-32 pb-20">
                 {children}
             </main>
-            <footer className="border-t border-neutral-200 dark:border-neutral-800 py-8 text-center text-neutral-500 text-sm transition-colors duration-300">
-                &copy; {new Date().getFullYear()} Alzi. All rights reserved.
+
+            <footer className="mx-auto max-w-6xl border-t border-border px-6 py-12">
+                <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+                    <div className="flex items-center gap-2">
+                        <span className="h-2 w-2 rounded-full bg-marker" />
+                        <p className="text-sm font-medium text-ink-soft">
+                            Built with code & AI · 2025
+                        </p>
+                    </div>
+                    <p className="text-sm text-ink-soft">
+                        &copy; {new Date().getFullYear()} Alzi. Inspired by Akhil Krishnan.
+                    </p>
+                </div>
             </footer>
         </div>
     );

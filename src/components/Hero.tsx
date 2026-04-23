@@ -1,99 +1,68 @@
-import { motion } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import { Annotation, Arrow } from './Annotation';
 import { PROFILE } from '../data';
 
 const Hero = () => {
     return (
-        <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
-            {/* Background Gradient */}
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-50/50 via-white to-white dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-950 -z-10 transition-colors duration-500" />
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-200/40 dark:bg-purple-900/10 rounded-full blur-[128px] pointer-events-none transition-colors duration-500" />
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-200/40 dark:bg-indigo-900/10 rounded-full blur-[128px] pointer-events-none transition-colors duration-500" />
-
-
-            <div className="max-w-6xl w-full px-6 grid md:grid-cols-2 gap-12 items-center">
-                {/* Text Content */}
-                <div className="order-2 md:order-1">
-                    <motion.p
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
-                        className="text-indigo-600 dark:text-indigo-400 mb-4 font-bold tracking-widest text-sm uppercase transition-colors"
-                    >
-                        Hello, I am
-                    </motion.p>
-                    <motion.h1
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
-                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-neutral-900 dark:text-white mb-6 leading-[0.9] transition-colors"
-                    >
-                        {PROFILE.name}<span className="text-indigo-600 dark:text-indigo-500 transition-colors">.</span>
-                    </motion.h1>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
-                        className="text-xl sm:text-2xl md:text-3xl text-neutral-600 dark:text-neutral-400 font-semibold mb-8 tracking-tight transition-colors"
-                    >
-                        {PROFILE.title}
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5, duration: 0.6 }}
-                        className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 max-w-lg leading-relaxed mb-10 transition-colors"
-                    >
-                        {PROFILE.about}
-                    </motion.p>
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6 }}
-                        className="flex gap-4"
-                    >
-                        <a href="#contact" className="px-8 py-3 bg-neutral-900 text-white dark:bg-white dark:text-black font-bold rounded-full hover:bg-neutral-700 dark:hover:bg-neutral-200 transition-colors">
-                            Contact Me
-                        </a>
-                        <a href="#experience" className="px-8 py-3 border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-white font-medium rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors">
-                            View Work
-                        </a>
-                    </motion.div>
-                </div>
-
-                {/* Profile Image */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-                    animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                    transition={{ delay: 0.4, duration: 0.8, type: "spring" }}
-                    className="order-1 md:order-2 flex justify-center md:justify-end"
-                >
-                    <div className="relative group">
-                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
-                        <motion.img
-                            whileHover={{ scale: 1.02 }}
-                            transition={{ duration: 0.3 }}
-                            src={PROFILE.image}
-                            alt={PROFILE.name}
-                            className="relative w-72 h-72 md:w-96 md:h-96 object-cover rounded-2xl shadow-2xl border border-neutral-200 dark:border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500 z-10"
-                        />
-                    </div>
-                </motion.div>
+        <section className="relative mx-auto max-w-6xl px-6 pb-20 pt-16 sm:pt-24">
+            {/* Availability top-right */}
+            <div className="absolute top-6 right-6 fade-up hidden sm:block">
+                <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-ink-soft">
+                    <span className="h-1.5 w-1.5 rounded-full bg-marker" />
+                    Available for new projects · 2026
+                </p>
             </div>
 
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 1 }}
-                className="absolute bottom-12 left-0 w-full flex justify-center"
-            >
-                <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 2 }}
-                >
-                    <ArrowDown className="text-neutral-400 dark:text-neutral-500 transition-colors" />
-                </motion.div>
-            </motion.div>
+            {/* Annotation top-left (Moved right to point to name) */}
+            <div className="pointer-events-none absolute left-20 top-4 hidden -rotate-6 sm:block">
+                <Annotation>Hello! I am a<br />Developer & Designer ✦</Annotation>
+                <Arrow className="ml-10 mt-1" rotate={140} />
+            </div>
+
+            <div className="fade-up pt-10">
+                <h1 className="font-display text-5xl font-semibold leading-[0.95] tracking-tight text-ink sm:text-7xl md:text-[88px]">
+                    {PROFILE.name.split(' ')[0]},
+                    <br />
+                    <span className="text-ink-soft">{PROFILE.title.split('|')[0]} —</span>
+                    <br />
+                    building premium web experiences.
+                </h1>
+
+                <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink-soft sm:text-xl">
+                    {PROFILE.about} I focus on bridging the gap between <span className="text-ink underline decoration-marker decoration-2 underline-offset-4">design and code</span> to create meaningful digital products.
+                </p>
+
+                <div className="relative mt-12 flex flex-wrap items-center gap-4">
+                    <a
+                        href="#projects"
+                        className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+                    >
+                        See projects →
+                    </a>
+                    <a
+                        href="#contact"
+                        className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-8 py-3 text-sm font-medium text-ink transition hover:bg-accent"
+                    >
+                        Get in touch
+                    </a>
+
+                    {/* Specializing annotation (Moved left) */}
+                    <div className="pointer-events-none hidden sm:block absolute right-[25%] -bottom-16 rotate-3">
+                        <Arrow rotate={-30} />
+                        <Annotation className="-mt-2 block">
+                            Specializing in 
+                            <br />
+                            Modern Web Tech
+                        </Annotation>
+                    </div>
+                </div>
+            </div>
+
+            {/* Keep scrolling cue */}
+            <div className="mt-32 flex items-center gap-3 text-ink-soft">
+                <span className="h-px w-10 bg-ink-soft/40" />
+                <span className="font-hand text-2xl text-marker">Keep scrolling</span>
+                <span className="text-lg">↓</span>
+            </div>
         </section>
     );
 };
