@@ -17,9 +17,7 @@ export function PillNav() {
           to="/"
           className="group flex items-center gap-1 rounded-full px-3 py-1.5 text-sm font-medium text-ink transition hover:bg-accent"
         >
-          <span className="text-ink-soft">/Akhil</span>
-          <span className="text-ink-soft/60">›</span>
-          <span>Krishnan</span>
+          <span className="text-ink-soft">/Alzi</span>
         </Link>
         <span className="mx-1 hidden h-5 w-px bg-border sm:block" />
         <div className="hidden items-center gap-0.5 sm:flex">

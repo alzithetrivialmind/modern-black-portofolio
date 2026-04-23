@@ -32,19 +32,20 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Akhil Krishnan — Design Builder" },
+      { title: "Alzi — IT Developer & Consultant" },
       {
         name: "description",
         content:
-          "Akhil Krishnan — Design Builder with 11+ years shipping product design, design systems and AI-first workflows.",
+          "Alzi — IT Developer & Consultant specializing in ERPNext, Cybersecurity, and full-stack development.",
       },
-      { name: "author", content: "Akhil Krishnan" },
-      { property: "og:title", content: "Akhil Krishnan — Design Builder" },
+      { name: "author", content: "Alzi" },
+      { property: "og:title", content: "Alzi — IT Developer & Consultant" },
       {
         property: "og:description",
         content:
-          "11+ years deep in product design — now shipping what I design with AI-first workflows.",
+          "IT Developer & Consultant shipping enterprise solutions, design-first products, and secure infrastructure.",
       },
+
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],

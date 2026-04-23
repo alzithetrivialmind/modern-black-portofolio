@@ -4,16 +4,16 @@ import { projects } from "@/data/portfolio";
 export const Route = createFileRoute("/works")({
   head: () => ({
     meta: [
-      { title: "Works — Akhil Krishnan" },
+      { title: "Works — Alzi" },
       {
         name: "description",
         content:
-          "Selected case studies from Akhil Krishnan — Hevo Data, Clazar design system, MessagePlus, Simbian.ai and more.",
+          "Selected case studies from Alzi — SecureBatch QR, Palma Shipyard, ERPNext implementation, and more.",
       },
-      { property: "og:title", content: "Works — Akhil Krishnan" },
+      { property: "og:title", content: "Works — Alzi" },
       {
         property: "og:description",
-        content: "Case studies in product design, design systems and AI-first workflows.",
+        content: "Case studies in enterprise automation, IT strategy and secure system development.",
       },
     ],
   }),
@@ -26,14 +26,16 @@ function Works() {
       <header className="max-w-3xl">
         <p className="font-hand text-2xl text-marker">/works</p>
         <h1 className="mt-2 font-display text-5xl font-semibold tracking-tight sm:text-6xl">
-          Things I designed,
+          Things I built,
           <br />
-          <span className="text-ink-soft">and helped ship.</span>
+          <span className="text-ink-soft">and helped automate.</span>
         </h1>
         <p className="mt-6 max-w-xl text-lg text-ink-soft">
-          A loose-chronological slice. Each one taught me something I didn't know going in.
+          A selection of projects where technical constraints met business strategy. 
+          Each one built to last and secure by design.
         </p>
       </header>
+
 
       <div className="mt-16 grid gap-8 sm:grid-cols-2">
         {projects.map((p, i) => (

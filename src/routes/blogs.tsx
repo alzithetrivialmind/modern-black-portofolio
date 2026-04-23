@@ -4,16 +4,16 @@ import { blogPosts } from "@/data/portfolio";
 export const Route = createFileRoute("/blogs")({
   head: () => ({
     meta: [
-      { title: "Blogs — Akhil Krishnan" },
+      { title: "Blogs — Alzi" },
       {
         name: "description",
         content:
-          "Writing on design systems, AI-first workflows and shipping product as a designer.",
+          "Writing on IT strategy, enterprise automation, and shipping secure software as a consultant.",
       },
-      { property: "og:title", content: "Blogs — Akhil Krishnan" },
+      { property: "og:title", content: "Blogs — Alzi" },
       {
         property: "og:description",
-        content: "Notes on design, systems, and shipping.",
+        content: "Notes on IT strategy, systems, and secure shipping.",
       },
     ],
   }),
@@ -25,12 +25,13 @@ function Blogs() {
     <section className="mx-auto max-w-3xl px-6 pb-12">
       <p className="font-hand text-2xl text-marker">/blogs</p>
       <h1 className="mt-2 font-display text-5xl font-semibold tracking-tight sm:text-6xl">
-        Notes from the studio.
+        Notes from the field.
       </h1>
       <p className="mt-6 max-w-xl text-lg text-ink-soft">
-        Long-form thinking on design systems, AI-first workflows, and what it means to
-        ship as a designer.
+        Long-form thinking on IT strategy, enterprise automation, and what it means to
+        ship secure systems in a complex world.
       </p>
+
 
       <ul className="mt-14 divide-y divide-border border-y border-border">
         {blogPosts.map((post) => (

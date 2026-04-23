@@ -5,17 +5,17 @@ import { projects } from "@/data/portfolio";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Akhil Krishnan — Design Builder, 11 years deep" },
+      { title: "Alzi — IT Developer & Consultant" },
       {
         name: "description",
         content:
-          "Personal portfolio of Akhil Krishnan — Design Builder shipping AI-first product design and design systems.",
+          "Personal portfolio of Alzi — IT Developer & Consultant shipping enterprise solutions and secure products.",
       },
-      { property: "og:title", content: "Akhil Krishnan — Design Builder" },
+      { property: "og:title", content: "Alzi — IT Developer & Consultant" },
       {
         property: "og:description",
         content:
-          "11+ years deep — now shipping what I design with AI-first workflows. Recently built the Clazar design system.",
+          "Master of Management & Computer Science — now shipping enterprise systems and secure code. Founder of DigiSentral.",
       },
     ],
   }),
@@ -30,30 +30,33 @@ function Index() {
       {/* Hero */}
       <section className="relative mx-auto max-w-6xl px-6 pb-20 pt-12 sm:pt-20">
         {/* Annotation top-left */}
-        <div className="pointer-events-none absolute left-4 top-2 hidden -rotate-6 sm:block">
-          <Annotation>Hey there! I am a<br />Design Builder ✦</Annotation>
-          <Arrow className="ml-16 mt-1" rotate={140} />
+        <div className="pointer-events-none absolute -left-24 -top-14 hidden -rotate-12 sm:block">
+          <Annotation>Hey there! I am an<br />IT Developer ✦</Annotation>
+          <Arrow className="ml-24 mt-2" rotate={160} />
         </div>
 
         <div className="fade-up">
-          <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-ink-soft">
-            <span className="h-1.5 w-1.5 rounded-full bg-marker" />
-            Available for select projects · 2025
-          </p>
-
           <h1 className="font-display text-5xl font-semibold leading-[0.95] tracking-tight text-ink sm:text-7xl md:text-[88px]">
-            Design Builder,
+            IT Developer,
             <br />
-            <span className="text-ink-soft">11 years deep —</span>
+            <span className="text-ink-soft">Building Systems —</span>
             <br />
-            now shipping what I design.
+            shipping secure solutions.
           </h1>
 
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink-soft sm:text-xl">
-            I'm Akhil. I work at the seam between design and code, with AI-first
-            workflows that turn ideas into shipping product in days, not quarters.
-            Currently building at <span className="text-ink underline decoration-marker decoration-2 underline-offset-4">Hevo Data</span>.
+            I'm Alzi. I work at the intersection of business logic and secure code, with modern
+            workflows that turn complex problems into reliable systems.
+            Currently leading at <span className="text-ink underline decoration-marker decoration-2 underline-offset-4">DigiSentral</span>.
           </p>
+
+          <div className="mt-6 flex items-center gap-2 text-xs font-medium text-ink-soft">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-marker opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-marker"></span>
+            </span>
+            Open for consulting projects · 2025
+          </div>
 
           {/* Annotation bottom-right of hero */}
           <div className="relative mt-10 flex flex-wrap items-center gap-4">
@@ -69,17 +72,20 @@ function Index() {
             >
               About me
             </Link>
-
-            <div className="pointer-events-none ml-auto hidden -translate-y-2 rotate-3 sm:block">
-              <Arrow rotate={-30} />
-              <Annotation className="-mt-2 block">
-                Recently built Clazar
-                <br />
-                design system from scratch
-              </Annotation>
-            </div>
           </div>
         </div>
+
+        {/* Annotation floating right-center */}
+        <div className="pointer-events-none absolute -right-20 top-[45%] hidden -translate-y-1/2 rotate-6 sm:block">
+          <Arrow rotate={-25} />
+          <Annotation className="-mt-1 block">
+            Recently automated
+            <br />
+            shipyard ERP from zero
+          </Annotation>
+        </div>
+
+
 
         {/* Keep scrolling cue */}
         <div className="mt-24 flex items-center gap-3 text-ink-soft">

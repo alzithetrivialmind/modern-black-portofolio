@@ -9,177 +9,129 @@ export type Project = {
   problem: string;
   process: string[];
   outcome: string;
+  link?: string;
+  github?: string;
 };
 
 export const projects: Project[] = [
   {
-    slug: "hevo-data",
-    title: "Hevo Data — Pipelines reimagined",
-    role: "Lead Product Designer",
-    year: "2023 — Now",
-    tags: ["SaaS", "Data", "Workflows"],
+    slug: "securebatch-qr",
+    title: "SecureBatch QR — Privacy-first contact sharing",
+    role: "Founder & Developer",
+    year: "2024",
+    tags: ["React", "TypeScript", "Vite", "Privacy"],
     cover: "from-[#FFB199] via-[#FF8C7C] to-[#FF6A88]",
     blurb:
-      "Rebuilding the pipeline creation experience for thousands of data engineers — from a 9-step wizard to a single fluid canvas.",
+      "A secure batch QR code contact maker that generates multiple QR codes with vCard data securely.",
     problem:
-      "Setting up a new pipeline took 20+ minutes and required jumping between disconnected screens. Engineers dropped off mid-flow constantly.",
+      "Sharing contacts in bulk often involves privacy risks or clunky third-party tools that store your data.",
     process: [
-      "Shadowed 12 customers across 3 timezones, mapped every click in their first-pipeline journey.",
-      "Stripped the 9-step wizard into 3 progressive sections with inline validation.",
-      "Co-designed a live preview component with engineering — query → schema → first row in under 5 seconds.",
-      "Shipped a private beta to 40 accounts and iterated weekly for 6 weeks.",
+      "Designed a client-side only generation engine to ensure zero data ever leaves the device.",
+      "Implemented vCard standard compatibility across iOS and Android scanners.",
+      "Built a batch processing UI that allows users to upload CSVs and get a ZIP of high-res QR codes.",
     ],
     outcome:
-      "Median time-to-first-pipeline dropped from 22 min → 6 min. Activation up 38% in the first quarter after rollout.",
+      "Successfully launched on Vercel, providing a free tool for events and professional networking.",
+    link: "https://qr-code-contact-maker.vercel.app/",
+    github: "https://github.com/alzithetrivialmind/securebatch-qr",
   },
   {
-    slug: "clazar-design-system",
-    title: "Clazar — Design system from zero",
-    role: "Founding Designer",
-    year: "2024",
-    tags: ["Design System", "Tokens", "Foundations"],
+    slug: "palma-shipyard",
+    title: "Palma Shipyard — Industrial digital presence",
+    role: "Lead Developer",
+    year: "2022 — Now",
+    tags: ["WordPress", "B2B", "Industrial"],
     cover: "from-[#A1C4FD] via-[#7BB1F0] to-[#C2E9FB]",
     blurb:
-      "Built Clazar's first proper design system — tokens, components, docs and a Figma library — solo, in 9 weeks.",
+      "Official corporate website for PT Palma Progress Shipyard, showcasing facilities and services.",
     problem:
-      "An early team shipping fast had 4 button styles, 6 shades of blue, and zero shared spacing. Onboarding new engineers cost a week each.",
+      "The shipyard lacked a digital footprint, making it difficult for international clients to audit facilities remotely.",
     process: [
-      "Audited every screen, photographed every inconsistency on a giant FigJam wall.",
-      "Defined a 3-layer token model (primitive → semantic → component) inspired by Polaris.",
-      "Shipped foundations + 22 components in Figma + Tailwind, paired with a Storybook docs site.",
-      "Ran a weekly office hour for adoption — answered 130+ questions in the first month.",
+      "Conducted a site audit of the shipyard to capture high-fidelity media for the portfolio.",
+      "Developed a custom WordPress theme optimized for industrial showcase.",
+      "Implemented a client-facing service portal for documentation access.",
     ],
     outcome:
-      "100% of new screens use the system. Design → engineering handoff time cut roughly in half.",
+      "Established a professional digital presence that significantly improved trust during international bidding processes.",
+    link: "https://www.palmashipyard.com",
   },
   {
-    slug: "messageplus",
-    title: "MessagePlus — Inbox that thinks",
-    role: "Product Designer",
-    year: "2022",
-    tags: ["Mobile", "Productivity", "AI"],
+    slug: "disciplinr",
+    title: "Disciplinr — Time boxing perfected",
+    role: "Founder & Developer",
+    year: "2023",
+    tags: ["Laravel", "PHP", "Productivity"],
     cover: "from-[#D4FC79] via-[#9BE15D] to-[#96E6A1]",
     blurb:
-      "An AI-assisted messaging app that quietly drafts your replies in your voice — never the assistant's.",
+      "A time boxing and blocking management app featuring analytics, trend analysis, and automatic scoring.",
     problem:
-      "Reply suggestions in messaging apps feel generic and corporate. People skip them.",
+      "Standard calendars don't help with deep work discipline. People schedule time but don't stick to it.",
     process: [
-      "Studied 200+ real conversations to model what 'voice' actually looks like in chat.",
-      "Designed a confidence-bar UI: AI only suggests when it's >80% sure.",
-      "Built a tone-shaping pill: tap to nudge formal ↔ casual.",
+      "Built a scoring algorithm that compares 'planned vs actual' time spent on tasks.",
+      "Designed a minimalist dashboard focused on the 'Deep Work' score.",
+      "Implemented SQLite for local-first performance and simple deployment.",
     ],
     outcome:
-      "Suggestion acceptance rate hit 47% — about 4× industry average for smart replies.",
+      "Personal productivity tool used daily to manage complex IT projects and consulting work.",
+    github: "https://github.com/alzithetrivialmind/Disciplinr-Time-Boxing-and-Blocking-Management-App",
   },
   {
-    slug: "simbian-ai",
-    title: "Simbian.ai — Security copilot",
-    role: "Senior Product Designer",
-    year: "2023",
-    tags: ["AI", "Security", "Enterprise"],
+    slug: "erpnext-implementation",
+    title: "ERPNext — Enterprise orchestration",
+    role: "IT Developer & Consultant",
+    year: "2022 — 2024",
+    tags: ["ERP", "Python", "Business Logic"],
     cover: "from-[#0F2027] via-[#203A43] to-[#2C5364]",
     blurb:
-      "Designing the human-in-the-loop layer for an autonomous SOC agent — analysts trust it because they can see exactly what it did.",
+      "End-to-end implementation of ERPNext for shipyard operations, including legacy data migration.",
     problem:
-      "Security analysts don't trust AI agents. Black-box automation is a non-starter in regulated environments.",
+      "Manual paperwork and fragmented spreadsheets led to significant delays in procurement and inventory tracking.",
     process: [
-      "Designed an audit timeline that shows every tool call, decision and rollback the agent made.",
-      "Created an 'approve / edit / reject' triage tray that keeps the analyst in command.",
-      "Built reasoning cards that translate agent thinking into plain English.",
+      "Mapped complex shipyard workflows into standard ERP functional modules.",
+      "Developed custom Python scripts for data cleaning and migration from legacy systems.",
+      "Trained 50+ staff members on new digital SOPs.",
     ],
     outcome:
-      "Pilot customers reported 70%+ trust in agent actions after using the timeline for two weeks.",
-  },
-  {
-    slug: "kite-payments",
-    title: "Kite — Payments without the dread",
-    role: "Product Designer",
-    year: "2021",
-    tags: ["Fintech", "Mobile", "B2C"],
-    cover: "from-[#FBC2EB] via-[#A18CD1] to-[#F5A2B8]",
-    blurb:
-      "A consumer payments app that treats sending money like sending a note — warm, personal, and a little playful.",
-    problem:
-      "Payment flows are sterile. Sending ₹500 to a friend feels the same as paying a tax bill.",
-    process: [
-      "Designed expressive transaction cards with notes, stickers and reactions.",
-      "Stripped confirmation flows to a single haptic-tap with undo.",
-    ],
-    outcome:
-      "P2P weekly active rate up 2.3× after launch. NPS +18.",
-  },
-  {
-    slug: "studio-notes",
-    title: "Studio Notes — Writing for builders",
-    role: "Self-initiated",
-    year: "2020",
-    tags: ["Side Project", "Editorial"],
-    cover: "from-[#F6D365] via-[#F0B36A] to-[#FDA085]",
-    blurb:
-      "A small writing app I built for myself to think out loud about design problems — no folders, no clutter, just a daily blank page.",
-    problem:
-      "Every notes app I tried optimised for organisation. I wanted one that optimised for showing up.",
-    process: [
-      "Designed a single endless scroll, one entry per day.",
-      "Removed every menu — just keyboard shortcuts and a soft autosave.",
-    ],
-    outcome:
-      "Used it daily for 3 years. Open-sourced the editor; small community of writers using it now.",
+      "Procurement lifecycle reduced by 30%. Inventory accuracy increased to 98% within the first year.",
   },
 ];
 
 export const blogPosts = [
   {
-    slug: "ai-first-workflows",
-    title: "AI-first workflows for product designers",
+    slug: "it-strategy-for-startups",
+    title: "IT Strategy for growing startups",
     excerpt:
-      "Less Figma frames, more shipped pixels. How I rebuilt my workflow around AI prototyping in 2024.",
-    date: "Mar 18, 2025",
-    readTime: "8 min",
-  },
-  {
-    slug: "design-systems-team-of-one",
-    title: "Building a design system as a team of one",
-    excerpt:
-      "What I learned shipping Clazar's design system in 9 weeks — and what I'd do differently if I started today.",
-    date: "Feb 02, 2025",
-    readTime: "12 min",
-  },
-  {
-    slug: "stop-designing-pages",
-    title: "Stop designing pages. Start designing systems of decisions.",
-    excerpt:
-      "A short note on why most product design is asking the wrong question one screen at a time.",
-    date: "Dec 11, 2024",
-    readTime: "5 min",
-  },
-  {
-    slug: "the-design-builder",
-    title: "What I mean when I say 'design builder'",
-    excerpt:
-      "Designers who ship. The label, the practice, and why I think it's the most useful role in product right now.",
-    date: "Oct 20, 2024",
+      "Why 'moving fast' shouldn't mean leaving your infrastructure in a mess. A guide to scalable IT foundations.",
+    date: "Oct 12, 2024",
     readTime: "6 min",
+  },
+  {
+    slug: "cybersecurity-shipyards",
+    title: "Cybersecurity in industrial environments",
+    excerpt:
+      "Lessons learned from hardening a shipyard network against modern attack vectors.",
+    date: "Aug 05, 2024",
+    readTime: "10 min",
   },
 ];
 
 export const timeline = [
-  { year: "2024 — Now", what: "Founding Designer at Clazar. Built the design system, shipping product daily." },
-  { year: "2022 — 2024", what: "Lead Product Designer at Hevo Data. Owned pipeline, transformations, observability." },
-  { year: "2020 — 2022", what: "Senior Product Designer at MessagePlus. Mobile-first, AI-assisted messaging." },
-  { year: "2018 — 2020", what: "Product Designer at Kite. Consumer fintech, payments, growth flows." },
-  { year: "2015 — 2018", what: "Designer at a small Bangalore studio. Brand + product, learned to ship." },
-  { year: "2014", what: "Started designing professionally. First job at a 4-person startup." },
+  { year: "2024 — Now", what: "Founder & Principal Consultant at DigiSentral Solusi. ERPNext & IT Strategy." },
+  { year: "2022 — Now", what: "IT Developer at PT Palma Progress Shipyard. ERP, Security, and Network Infrastructure." },
+  { year: "2020 — 2022", what: "IT Intern at Universitas Internasional Batam. Cybersecurity & Server Admin." },
+  { year: "2023 — 2025", what: "Master of Management at Universitas Internasional Batam. GPA 3.92." },
+  { year: "2019 — 2023", what: "Bachelor of Computer Science at Universitas Internasional Batam. GPA 3.90." },
 ];
 
 export const tools = [
-  "Figma",
-  "Framer",
-  "Lovable",
-  "Cursor + Claude",
-  "v0",
-  "Linear",
-  "Notion",
-  "Principle",
-  "After Effects",
+    "ERPNext",
+    "Python",
+    "React",
+    "TypeScript",
+    "Networking (Cisco, Mikrotik)",
+    "Cybersecurity (Penetration Testing)",
+    "Linux Administration",
+    "Docker & VMware",
+    "SQL Server",
+    "Laravel",
 ];

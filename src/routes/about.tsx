@@ -5,16 +5,16 @@ import { timeline, tools } from "@/data/portfolio";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Akhil Krishnan" },
+      { title: "About — Alzi" },
       {
         name: "description",
         content:
-          "12+ years designing software. Bio, timeline and the tools Akhil Krishnan ships with.",
+          "IT Developer & Consultant specializing in ERP systems, Cybersecurity, and full-stack development. Bio and timeline.",
       },
-      { property: "og:title", content: "About — Akhil Krishnan" },
+      { property: "og:title", content: "About — Alzi" },
       {
         property: "og:description",
-        content: "Bio, timeline and toolbox of a Design Builder.",
+        content: "Bio, timeline and toolbox of an IT Developer and Consultant.",
       },
     ],
   }),
@@ -26,27 +26,26 @@ function About() {
     <section className="mx-auto max-w-3xl px-6 pb-12">
       <p className="font-hand text-2xl text-marker">/about</p>
       <h1 className="mt-2 font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
-        Designer who codes,
+        IT Developer,
         <br />
-        builder who designs.
+        Strategist & Consultant.
       </h1>
 
       <div className="mt-10 space-y-6 text-lg leading-relaxed text-ink">
         <p>
-          I've been designing software for over a decade — across consumer, fintech,
-          messaging, security and developer tools. Somewhere around year seven I got tired
-          of throwing static frames over the wall and started learning to ship them
-          myself. That changed the work.
+          I've been building and securing enterprise infrastructure for over 5 years — across shipyards,
+          consultancies, and academic institutions. My work lives at the intersection of business automation
+          and technical reliability.
         </p>
         <p>
-          Today I call myself a <Annotation className="text-3xl">Design Builder</Annotation>.
-          It means I design and build the same thing — usually in the same week. AI tools
-          shrunk the distance between "I have an idea" and "the team is using it" to
-          almost nothing, and that's where I want to live.
+          I specialize in <Annotation className="text-3xl">ERPNext & IT Strategy</Annotation>.
+          I help organizations bridge the gap between fragmented legacy processes and modern, data-driven
+          orchestration. Whether it's hardening a shipyard network or migrating multi-year financial data,
+          I focus on solutions that are secure, scalable, and human-centric.
         </p>
         <p>
-          Outside work I write at length about design and software, take long walks
-          without a phone, and keep a running list of tiny side projects nobody asked for.
+          Currently, I lead <span className="text-ink font-semibold">DigiSentral Solusi</span>, where I consult for businesses
+          ready to level up their digital operations.
         </p>
       </div>
 
@@ -66,7 +65,7 @@ function About() {
 
       {/* Tools */}
       <h2 className="mt-20 font-display text-sm font-semibold uppercase tracking-[0.18em] text-ink-soft">
-        Tools I reach for
+        Toolkit
       </h2>
       <ul className="mt-5 flex flex-wrap gap-2">
         {tools.map((t) => (

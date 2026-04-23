@@ -4,15 +4,15 @@ import { timeline, tools } from "@/data/portfolio";
 export const Route = createFileRoute("/resume")({
   head: () => ({
     meta: [
-      { title: "Resume — Akhil Krishnan" },
+      { title: "Resume — Alzi" },
       {
         name: "description",
-        content: "One-page resume of Akhil Krishnan, Design Builder.",
+        content: "One-page resume of Alzi, IT Developer & Consultant.",
       },
-      { property: "og:title", content: "Resume — Akhil Krishnan" },
+      { property: "og:title", content: "Resume — Alzi" },
       {
         property: "og:description",
-        content: "One-page resume of a Design Builder with 11+ years of experience.",
+        content: "One-page resume of an IT Developer & Consultant with a Master's degree in Management.",
       },
     ],
   }),
@@ -26,26 +26,26 @@ function Resume() {
         <div>
           <p className="font-hand text-2xl text-marker">/resume</p>
           <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-            Akhil Krishnan
+            Alzi
           </h1>
           <p className="mt-1 text-ink-soft">
-            Design Builder · Bangalore, India · hello@akhilkrishnan.design
+            IT Developer & Consultant · Batam, Indonesia · alzi@example.com
           </p>
         </div>
         <button
           onClick={() => window.print()}
           className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:opacity-90"
         >
-          Download PDF
+          Print Resume
         </button>
       </div>
 
       <div className="mt-12 space-y-12 text-ink">
         <Block title="Summary">
           <p>
-            11+ years of product design across consumer, fintech, security and developer
-            tools. Equally at home in Figma and a code editor. Lately: AI-first
-            workflows, shipping production UI in days.
+            IT Developer & Consultant specializing in ERPNext implementation, 
+            Cybersecurity hardening, and enterprise network infrastructure. 
+            Focused on bridging the gap between complex business logic and reliable, secure systems.
           </p>
         </Block>
 
@@ -60,14 +60,20 @@ function Resume() {
           </ol>
         </Block>
 
-        <Block title="Toolbox">
+        <Block title="Toolkit">
           <p className="text-ink-soft">{tools.join(" · ")}</p>
         </Block>
 
         <Block title="Education">
-          <div className="grid gap-1 sm:grid-cols-[10rem_1fr]">
-            <span className="font-hand text-lg text-marker">2010 — 2014</span>
-            <span>B.Des, Visual Communication. National Institute of Design.</span>
+          <div className="space-y-4">
+            <div className="grid gap-1 sm:grid-cols-[10rem_1fr]">
+              <span className="font-hand text-lg text-marker">2023 — 2025</span>
+              <span>Master of Management. Universitas Internasional Batam. GPA 3.92</span>
+            </div>
+            <div className="grid gap-1 sm:grid-cols-[10rem_1fr]">
+              <span className="font-hand text-lg text-marker">2019 — 2023</span>
+              <span>Bachelor of Computer Science. Universitas Internasional Batam. GPA 3.90</span>
+            </div>
           </div>
         </Block>
       </div>

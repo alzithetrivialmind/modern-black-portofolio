@@ -1,8 +1,7 @@
 const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/" },
-  { label: "X / Twitter", href: "https://x.com/" },
-  { label: "Read.cv", href: "https://read.cv/" },
-  { label: "Email", href: "mailto:hello@akhilkrishnan.design" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/itsalzi/" },
+  { label: "GitHub", href: "https://github.com/alzithetrivialmind" },
+  { label: "Email", href: "mailto:alzi@example.com" },
 ];
 
 export function Footer() {
@@ -14,7 +13,7 @@ export function Footer() {
             Let's build something.
           </p>
           <p className="mt-2 max-w-sm text-sm text-ink-soft">
-            Designed &amp; built by Akhil Krishnan — {new Date().getFullYear()}. Always open to a
+            Designed &amp; built by Alzi — {new Date().getFullYear()}. Always open to a
             good conversation.
           </p>
         </div>

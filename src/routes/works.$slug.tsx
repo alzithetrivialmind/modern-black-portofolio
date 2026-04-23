@@ -9,8 +9,8 @@ export const Route = createFileRoute("/works/$slug")({
   },
   head: ({ loaderData }) => {
     const p = loaderData?.project;
-    const title = p ? `${p.title} — Akhil Krishnan` : "Case study — Akhil Krishnan";
-    const desc = p?.blurb ?? "Case study by Akhil Krishnan";
+    const title = p ? `${p.title} — Alzi` : "Case study — Alzi";
+    const desc = p?.blurb ?? "Case study by Alzi";
     return {
       meta: [
         { title },
@@ -99,12 +99,12 @@ function WorkDetail() {
 
       <div className="mt-16 rounded-3xl border border-border bg-card p-8 text-center">
         <p className="font-hand text-2xl text-marker">want to talk shop?</p>
-        <p className="mt-2 font-display text-2xl">Let's design something next.</p>
+        <p className="mt-2 font-display text-2xl">Let's build something next.</p>
         <a
-          href="mailto:hello@akhilkrishnan.design"
+          href="mailto:alzi@example.com"
           className="mt-5 inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
         >
-          hello@akhilkrishnan.design
+          alzi@example.com
         </a>
       </div>
     </article>
