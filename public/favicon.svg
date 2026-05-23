@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@800&amp;display=swap');
+    .txt {
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      fill: #18181b;
+    }
+    .dot {
+      fill: #e05a47; /* warm coral */
+    }
+    @media (prefers-color-scheme: dark) {
+      .txt {
+        fill: #f4f4f5;
+      }
+      .dot {
+        fill: #f0705f; /* slightly brighter warm coral for dark mode */
+      }
+    }
+  </style>
+  <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" class="txt">Al<tspan class="dot">.</tspan></text>
+</svg>
