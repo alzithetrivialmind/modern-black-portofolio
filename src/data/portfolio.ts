@@ -96,23 +96,24 @@ export const projects: Project[] = [
   },
   {
     slug: "cecs",
-    title: "CECS — Equipment control for a working yard",
+    title: "CECS — Equipment control, open source",
     role: "Full-stack Developer",
     year: "2026",
     tags: ["Next.js", "PostgreSQL", "Prisma", "Docker"],
     cover: "from-[#3A2A1E] via-[#A3541F] to-[#F59E0B]",
     blurb:
-      "Company Equipment Control System: the lifecycle of heavy equipment, vehicles and production machinery, from breakdown report to preventive maintenance.",
+      "Company Equipment Control System: a self-hosted app that follows heavy equipment, vehicles and machines through breakdowns, repairs, maintenance and inspections.",
     problem:
-      "The engineering division needed breakdowns, repairs, service schedules and inspections recorded in one place, by people reporting from the dock rather than a desk.",
+      "It answers one question quickly: what has happened to this machine, and is it ready to work? Most records are entered in the field, so it had to work on a phone first.",
     process: [
-      "Made breakdown reporting mobile-first, flowing into work orders that update equipment status automatically.",
-      "Scheduled preventive maintenance by hour meter or calendar, with dynamic checklists.",
-      "Tracked inspections, certificates and spare-part usage, with QR asset tags on each unit.",
-      "Built fleet dashboards with availability, MTTR and MTBF, plus Excel exports.",
+      "Made breakdown reporting a short phone form with photos and on-device drafts, flowing into work orders that update unit status and downtime.",
+      "Scheduled preventive maintenance by operating hours or calendar, with hour-meter readings that can never go backwards.",
+      "Tracked inspections, certificate expiry and spare-part usage, with a QR label for each unit.",
+      "Built a fleet readiness dashboard, reports with Excel export, five roles and an audit log.",
     ],
     outcome:
-      "A role-based system for admins, supervisors and technicians at PT Palma Progress Shipyard, built on Next.js, PostgreSQL and MinIO.",
+      "Released under the MIT license with fictional demo data, Docker setup, and deployment, security and backup guides.",
+    github: "https://github.com/alzithetrivialmind/simple-cecs",
   },
   {
     slug: "nor-checklist",
@@ -136,21 +137,25 @@ export const projects: Project[] = [
   },
   {
     slug: "attendance",
-    title: "Attendance — From fingerprint log to work codes",
+    title: "Fingerspot Attendance Hub — Live fingerprint scans",
     role: "Developer",
-    year: "2025",
-    tags: ["Python", "Flask", "SQLite"],
-    cover: "from-[#E8836B] via-[#DB6A5E] to-[#C94F6D]",
+    year: "2026",
+    tags: ["FastAPI", "PostgreSQL", "Docker", "Webhooks"],
+    cover: "from-[#0F3D2E] via-[#1B5E46] to-[#2E8B66]",
+    image: "/works/attendance.webp",
     blurb:
-      "A web app that turns attendance exports into shift and work-hour codes, ready for review and export.",
-    problem: "Shift and work-hour codes had to be worked out from raw attendance exports.",
+      "A self-hosted attendance server for Fingerspot machines. It receives scans live, recovers missed ones, and manages employees across machines from one place.",
+    problem:
+      "Attendance machines answer commands asynchronously, and scans can be missed while a server is down. Deleting an employee from a machine can also lose their fingerprint template.",
     process: [
-      "Detected the shift type from each date and generated codes from clock-out times.",
-      "Kept people in control with per-row edits for leave, breaks and overtime.",
-      "Stored every upload with an audit trail and the original file.",
+      "Received scans by webhook without duplicates, and pulled back any missed while the server was offline.",
+      "Synced employees both ways through a queue that marks a change done only after the machine confirms it.",
+      "Copied fingerprint templates before any delete or change, and cancelled the delete if the copy failed.",
+      "Added a full-screen monitor, import and export, five access levels, activity logs and automatic backups.",
     ],
-    outcome: "Ported from a desktop tool to a web app with user roles and CSV and Excel export.",
-    github: "https://github.com/alzithetrivialmind/fingerspot-attendance-data-conversion",
+    outcome:
+      "Released under the MIT license with automated tests and setup docs in Indonesian and English. Tested so far with the Revo WDV-204BNC.",
+    github: "https://github.com/alzithetrivialmind/fingerspot-attendance-system",
   },
   {
     slug: "palma-shipyard",
@@ -231,6 +236,7 @@ export const capabilities: Capability[] = [
       "TypeScript",
       "Electron",
       "Python",
+      "FastAPI",
       "Laravel",
       "PostgreSQL",
       "SQL Server",

@@ -9,7 +9,7 @@ export const Route = createFileRoute("/works/")({
       {
         name: "description",
         content:
-          "Work by Alzi: SnapCuller, the Bollard Pull Test app, ERPNext, CECS, NOR Checklist and more.",
+          "Work by Alzi: SnapCuller, the Bollard Pull Test app, ERPNext, CECS, Fingerspot Attendance Hub and more.",
       },
       { property: "og:title", content: "Works — Alzi" },
       {

@@ -12,7 +12,7 @@ export function ProjectCover({ project, wide = false }: { project: Project; wide
           src={project.image}
           alt={`Screenshot of ${projectName(project)}`}
           loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover object-top"
+          className="absolute inset-0 h-full w-full object-cover object-left-top"
         />
       ) : (
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_55%)]" />

@@ -76,7 +76,7 @@ function WorkDetail() {
           <img
             src={project.image}
             alt={`Screenshot of ${project.title.split("—")[0].trim()}`}
-            className="h-full w-full object-cover object-top"
+            className="h-full w-full object-cover object-left-top"
           />
         ) : (
           <div className="h-full w-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_55%)]" />
