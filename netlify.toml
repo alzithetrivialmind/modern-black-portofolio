@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build"
+  publish = "dist/client"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# dist/client holds both works.html and a works/ folder; serve the page explicitly.
+[[redirects]]
+  from = "/works"
+  to = "/works.html"
+  status = 200
+  force = true
