@@ -1,3 +1,4 @@
+import { ProjectImage } from "@/components/site/ProjectMedia";
 import { projectName, type Project } from "@/data/portfolio";
 
 export function ProjectCover({ project, wide = false }: { project: Project; wide?: boolean }) {
@@ -7,16 +8,7 @@ export function ProjectCover({ project, wide = false }: { project: Project; wide
         wide ? "aspect-[4/3] sm:aspect-[16/9]" : "aspect-[4/3]"
       } transition-transform duration-500 group-hover:-translate-y-1`}
     >
-      {project.image ? (
-        <img
-          src={project.image}
-          alt={`Screenshot of ${projectName(project)}`}
-          loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover object-left-top"
-        />
-      ) : (
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_55%)]" />
-      )}
+      <ProjectImage project={project} />
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
       <div className="absolute inset-x-6 bottom-5 flex items-end justify-between gap-4 text-white">
         <p className="font-display text-2xl font-semibold sm:text-3xl">{projectName(project)}</p>

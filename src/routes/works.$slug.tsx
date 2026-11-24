@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { EmailReveal } from "@/components/site/EmailReveal";
+import { ProjectImage, ProjectVideo } from "@/components/site/ProjectMedia";
 import { projects } from "@/data/portfolio";
 
 export const Route = createFileRoute("/works/$slug")({
@@ -69,19 +70,30 @@ function WorkDetail() {
         </div>
       </header>
 
-      <div
-        className={`mt-10 aspect-[16/9] overflow-hidden rounded-3xl bg-gradient-to-br ${project.cover}`}
-      >
-        {project.image ? (
-          <img
-            src={project.image}
-            alt={`Screenshot of ${project.title.split("—")[0].trim()}`}
-            className="h-full w-full object-cover object-left-top"
-          />
-        ) : (
-          <div className="h-full w-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_55%)]" />
+      <figure className="mt-10">
+        <div
+          className={`relative aspect-[16/9] overflow-hidden rounded-3xl bg-gradient-to-br ${project.cover}`}
+        >
+          {project.video ? (
+            <ProjectVideo project={project} />
+          ) : (
+            <ProjectImage project={project} eager />
+          )}
+        </div>
+        {project.video && (
+          <figcaption className="mt-3 text-sm text-ink-soft">
+            {project.video.caption}{" "}
+            <a
+              href={`https://youtu.be/${project.video.youtubeId}`}
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-4 hover:text-ink"
+            >
+              Watch on YouTube ↗
+            </a>
+          </figcaption>
         )}
-      </div>
+      </figure>
 
       <p className="mt-10 text-xl leading-relaxed text-ink">{project.blurb}</p>
 

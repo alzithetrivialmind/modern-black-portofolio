@@ -17,8 +17,9 @@ export type Project = {
   role: string;
   year: string;
   tags: string[];
-  cover: string; // gradient class, shown when there is no image
-  image?: string;
+  cover: string; // gradient behind app screens
+  image?: { src: string; alt: string; kind: "screen" | "full"; position?: string };
+  video?: { youtubeId: string; title: string; caption: string };
   blurb: string;
   problem: string;
   process: string[];
@@ -38,8 +39,12 @@ export const projects: Project[] = [
     role: "Founder & Developer",
     year: "2026",
     tags: ["Electron", "React", "TypeScript", "AI"],
-    cover: "from-[#1E1B4B] via-[#4C1D95] to-[#7C3AED]",
-    image: "/works/snapculler.webp",
+    cover: "from-[#2A1F6B] via-[#6D3BD1] to-[#B78BFA]",
+    image: {
+      src: "/works/snapculler.webp",
+      alt: "SnapCuller grid view with a folder of photos",
+      kind: "screen",
+    },
     blurb:
       "A desktop photo culler for photographers who shoot thousands of RAW frames. It opens a folder directly, with no import step, and sorts with single keystrokes.",
     problem:
@@ -61,6 +66,18 @@ export const projects: Project[] = [
     year: "Palma Shipyard",
     tags: ["IoT", "Hardware integration", "Reporting"],
     cover: "from-[#0F2027] via-[#1F4B5C] to-[#2C7A7B]",
+    image: {
+      src: "/works/bollard-pull.webp",
+      alt: "Tugboat Cahaya 1603 under test with the live load reading on screen",
+      kind: "full",
+      position: "object-[14%_50%]",
+    },
+    video: {
+      youtubeId: "jKTn1xiJyMY",
+      title: "Cahaya 1603 | Tug Boat Bollard Pull Test",
+      caption:
+        "Bollard pull test of the tugboat Cahaya 1603, with the live reading in the lower left. Video by Palma Progress Shipyard.",
+    },
     blurb:
       "A proprietary application that runs tugboat bollard pull tests end to end, reading straight from the weighing hardware.",
     problem:
@@ -80,6 +97,11 @@ export const projects: Project[] = [
     year: "2022 — Now",
     tags: ["ERPNext", "Python", "MariaDB", "Linux"],
     cover: "from-[#134E5E] via-[#2F7D6B] to-[#71B280]",
+    image: {
+      src: "/works/erpnext.svg",
+      alt: "Diagram of stock issues traced back to the receipts they came from",
+      kind: "full",
+    },
     blurb:
       "End-to-end ERPNext implementation for shipyard operations: customization, legacy data migration and the SOPs people follow.",
     problem:
@@ -100,7 +122,12 @@ export const projects: Project[] = [
     role: "Full-stack Developer",
     year: "2026",
     tags: ["Next.js", "PostgreSQL", "Prisma", "Docker"],
-    cover: "from-[#3A2A1E] via-[#A3541F] to-[#F59E0B]",
+    cover: "from-[#8A3B12] via-[#D9772B] to-[#F7B955]",
+    image: {
+      src: "/works/cecs.webp",
+      alt: "CECS dashboard with demo equipment data",
+      kind: "screen",
+    },
     blurb:
       "Company Equipment Control System: a self-hosted app that follows heavy equipment, vehicles and machines through breakdowns, repairs, maintenance and inspections.",
     problem:
@@ -122,6 +149,11 @@ export const projects: Project[] = [
     year: "2026",
     tags: ["React", "PWA", "TypeScript"],
     cover: "from-[#7FA8E8] via-[#4C7BDD] to-[#3B5BDB]",
+    image: {
+      src: "/works/nor-checklist.webp",
+      alt: "NOR Checklist admin dashboard with demo vessels",
+      kind: "screen",
+    },
     blurb:
       "An installable web app for ship inspections, findings and Notice of Readiness documents, shared by the yard and its surveyors.",
     problem:
@@ -142,7 +174,11 @@ export const projects: Project[] = [
     year: "2026",
     tags: ["FastAPI", "PostgreSQL", "Docker", "Webhooks"],
     cover: "from-[#0F3D2E] via-[#1B5E46] to-[#2E8B66]",
-    image: "/works/attendance.webp",
+    image: {
+      src: "/works/attendance.webp",
+      alt: "Fingerspot Attendance Hub with demo scans",
+      kind: "screen",
+    },
     blurb:
       "A self-hosted attendance server for Fingerspot machines. It receives scans live, recovers missed ones, and manages employees across machines from one place.",
     problem:
@@ -164,7 +200,12 @@ export const projects: Project[] = [
     year: "2022 — Now",
     tags: ["WordPress", "Elementor", "cPanel"],
     cover: "from-[#A1C4FD] via-[#7BB1F0] to-[#C2E9FB]",
-    image: "/works/palma.webp",
+    image: {
+      src: "/works/palma.webp",
+      alt: "Palma Shipyard website home page",
+      kind: "full",
+      position: "object-left-top",
+    },
     blurb:
       "The official website of PT Palma Progress Shipyard, presenting its products and infrastructure.",
     problem:
@@ -182,8 +223,12 @@ export const projects: Project[] = [
     role: "Developer & Creator",
     year: "2026",
     tags: ["React", "TypeScript", "Vite"],
-    cover: "from-[#1E1B4B] via-[#4338CA] to-[#A855F7]",
-    image: "/works/securebatch.webp",
+    cover: "from-[#3B2FA8] via-[#7C5CF0] to-[#E879C9]",
+    image: {
+      src: "/works/securebatch.webp",
+      alt: "SecureBatch QR contact form",
+      kind: "screen",
+    },
     blurb:
       "A vCard QR generator that makes branded codes in bulk from a CSV, entirely in the browser.",
     problem:
@@ -204,6 +249,11 @@ export const projects: Project[] = [
     year: "2025",
     tags: ["Laravel", "PHP", "Bootstrap"],
     cover: "from-[#8FBF4D] via-[#5FA24A] to-[#3F8F4F]",
+    image: {
+      src: "/works/disciplinr.svg",
+      alt: "Illustration of a week of time boxes, kept and missed",
+      kind: "full",
+    },
     blurb:
       "A weekly time-blocking and time-boxing checklist with automatic scoring and trend analytics.",
     problem: "Calendars record a plan. They don't show whether you kept to it.",
