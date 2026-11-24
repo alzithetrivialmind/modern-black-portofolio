@@ -6,4 +6,19 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig();
+// alzi.work is hosted on Netlify as a static site: every page is prerendered
+// into dist/client, so no server runtime is needed.
+export default defineConfig({
+  cloudflare: false,
+  tanstackStart: {
+    prerender: {
+      enabled: true,
+      crawlLinks: true,
+      autoSubfolderIndex: false,
+      failOnError: true,
+      // Skip files such as /resume.pdf and the duplicate /works/ route path.
+      filter: ({ path }: { path: string }) =>
+        path === "/" || !(path.includes(".") || path.endsWith("/")),
+    },
+  },
+});
