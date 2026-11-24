@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { EmailReveal } from "@/components/site/EmailReveal";
 import { projects } from "@/data/portfolio";
 
 export const Route = createFileRoute("/works/$slug")({
@@ -71,7 +72,15 @@ function WorkDetail() {
       <div
         className={`mt-10 aspect-[16/9] overflow-hidden rounded-3xl bg-gradient-to-br ${project.cover}`}
       >
-        <div className="h-full w-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.35),transparent_55%)]" />
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={`Screenshot of ${project.title.split("—")[0].trim()}`}
+            className="h-full w-full object-cover object-top"
+          />
+        ) : (
+          <div className="h-full w-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_55%)]" />
+        )}
       </div>
 
       <p className="mt-10 text-xl leading-relaxed text-ink">{project.blurb}</p>
@@ -97,15 +106,38 @@ function WorkDetail() {
         <p>{project.outcome}</p>
       </Section>
 
+      {(project.link || project.github) && (
+        <div className="mt-12 flex flex-wrap gap-4">
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+            >
+              Visit live site ↗
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-border bg-card px-5 py-3 text-sm font-medium text-ink transition hover:bg-accent"
+            >
+              Source on GitHub ↗
+            </a>
+          )}
+        </div>
+      )}
+
       <div className="mt-16 rounded-3xl border border-border bg-card p-8 text-center">
         <p className="font-hand text-2xl text-marker">want to talk shop?</p>
         <p className="mt-2 font-display text-2xl">Let's build something next.</p>
-        <a
-          href="mailto:alzi@example.com"
+        <EmailReveal
+          label="Email me"
           className="mt-5 inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
-        >
-          alzi@example.com
-        </a>
+        />
       </div>
     </article>
   );

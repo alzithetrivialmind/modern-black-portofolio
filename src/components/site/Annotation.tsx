@@ -19,13 +19,7 @@ export function Annotation({
   );
 }
 
-export function Arrow({
-  className = "",
-  rotate = 0,
-}: {
-  className?: string;
-  rotate?: number;
-}) {
+export function Arrow({ className = "", rotate = 0 }: { className?: string; rotate?: number }) {
   return (
     <svg
       viewBox="0 0 80 60"

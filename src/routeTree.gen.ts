@@ -9,16 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WorksRouteImport } from './routes/works'
+import { Route as SkillsRouteImport } from './routes/skills'
 import { Route as ResumeRouteImport } from './routes/resume'
 import { Route as BlogsRouteImport } from './routes/blogs'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WorksIndexRouteImport } from './routes/works.index'
 import { Route as WorksSlugRouteImport } from './routes/works.$slug'
 
-const WorksRoute = WorksRouteImport.update({
-  id: '/works',
-  path: '/works',
+const SkillsRoute = SkillsRouteImport.update({
+  id: '/skills',
+  path: '/skills',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResumeRoute = ResumeRouteImport.update({
@@ -41,10 +42,15 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorksIndexRoute = WorksIndexRouteImport.update({
+  id: '/works/',
+  path: '/works/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WorksSlugRoute = WorksSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => WorksRoute,
+  id: '/works/$slug',
+  path: '/works/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -52,16 +58,18 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/blogs': typeof BlogsRoute
   '/resume': typeof ResumeRoute
-  '/works': typeof WorksRouteWithChildren
+  '/skills': typeof SkillsRoute
   '/works/$slug': typeof WorksSlugRoute
+  '/works/': typeof WorksIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blogs': typeof BlogsRoute
   '/resume': typeof ResumeRoute
-  '/works': typeof WorksRouteWithChildren
+  '/skills': typeof SkillsRoute
   '/works/$slug': typeof WorksSlugRoute
+  '/works': typeof WorksIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -69,22 +77,38 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/blogs': typeof BlogsRoute
   '/resume': typeof ResumeRoute
-  '/works': typeof WorksRouteWithChildren
+  '/skills': typeof SkillsRoute
   '/works/$slug': typeof WorksSlugRoute
+  '/works/': typeof WorksIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/blogs' | '/resume' | '/works' | '/works/$slug'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/blogs'
+    | '/resume'
+    | '/skills'
+    | '/works/$slug'
+    | '/works/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/blogs' | '/resume' | '/works' | '/works/$slug'
+  to:
+    | '/'
+    | '/about'
+    | '/blogs'
+    | '/resume'
+    | '/skills'
+    | '/works/$slug'
+    | '/works'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/blogs'
     | '/resume'
-    | '/works'
+    | '/skills'
     | '/works/$slug'
+    | '/works/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -92,16 +116,18 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BlogsRoute: typeof BlogsRoute
   ResumeRoute: typeof ResumeRoute
-  WorksRoute: typeof WorksRouteWithChildren
+  SkillsRoute: typeof SkillsRoute
+  WorksSlugRoute: typeof WorksSlugRoute
+  WorksIndexRoute: typeof WorksIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/works': {
-      id: '/works'
-      path: '/works'
-      fullPath: '/works'
-      preLoaderRoute: typeof WorksRouteImport
+    '/skills': {
+      id: '/skills'
+      path: '/skills'
+      fullPath: '/skills'
+      preLoaderRoute: typeof SkillsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/resume': {
@@ -132,32 +158,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/works/': {
+      id: '/works/'
+      path: '/works'
+      fullPath: '/works/'
+      preLoaderRoute: typeof WorksIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/works/$slug': {
       id: '/works/$slug'
-      path: '/$slug'
+      path: '/works/$slug'
       fullPath: '/works/$slug'
       preLoaderRoute: typeof WorksSlugRouteImport
-      parentRoute: typeof WorksRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
-
-interface WorksRouteChildren {
-  WorksSlugRoute: typeof WorksSlugRoute
-}
-
-const WorksRouteChildren: WorksRouteChildren = {
-  WorksSlugRoute: WorksSlugRoute,
-}
-
-const WorksRouteWithChildren = WorksRoute._addFileChildren(WorksRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BlogsRoute: BlogsRoute,
   ResumeRoute: ResumeRoute,
-  WorksRoute: WorksRouteWithChildren,
+  SkillsRoute: SkillsRoute,
+  WorksSlugRoute: WorksSlugRoute,
+  WorksIndexRoute: WorksIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -32,24 +32,30 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Alzi — IT Developer & Consultant" },
+      { title: "Alzi — Full-stack maker, ERP consultant & IT manager" },
       {
         name: "description",
         content:
-          "Alzi — IT Developer & Consultant specializing in ERPNext, Cybersecurity, and full-stack development.",
+          "Alzi builds industrial software, ERPNext systems and independent products from Batam, Indonesia.",
       },
       { name: "author", content: "Alzi" },
-      { property: "og:title", content: "Alzi — IT Developer & Consultant" },
+      { property: "og:title", content: "Alzi — Full-stack maker, ERP consultant & IT manager" },
       {
         property: "og:description",
-        content:
-          "IT Developer & Consultant shipping enterprise solutions, design-first products, and secure infrastructure.",
+        content: "Full-stack maker, ERP consultant and IT manager in Batam, Indonesia.",
       },
 
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
     links: [
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700;800&family=Caveat:wght@400;500;600;700&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,

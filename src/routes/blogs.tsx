@@ -28,16 +28,21 @@ function Blogs() {
         Notes from the field.
       </h1>
       <p className="mt-6 max-w-xl text-lg text-ink-soft">
-        Long-form thinking on IT strategy, enterprise automation, and what it means to
-        ship secure systems in a complex world.
+        Long-form thinking on IT strategy, enterprise automation, and what it means to ship secure
+        systems in a complex world.
       </p>
 
+      {blogPosts.length === 0 && (
+        <p className="mt-14 border-y border-border py-7 text-ink-soft">
+          Nothing published yet. The first notes will appear here.
+        </p>
+      )}
 
-      <ul className="mt-14 divide-y divide-border border-y border-border">
+      <ul className="mt-14 divide-y divide-border border-y border-border empty:hidden">
         {blogPosts.map((post) => (
           <li key={post.slug} className="group">
             <a
-              href="#"
+              href={post.href}
               className="flex flex-col gap-2 py-7 transition group-hover:bg-accent/40 sm:flex-row sm:items-baseline sm:gap-8"
             >
               <span className="w-32 shrink-0 text-sm text-ink-soft">{post.date}</span>
