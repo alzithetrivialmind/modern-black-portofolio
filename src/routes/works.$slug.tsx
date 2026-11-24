@@ -72,7 +72,7 @@ function WorkDetail() {
 
       <figure className="mt-10">
         <div
-          className={`relative aspect-[16/9] overflow-hidden rounded-3xl bg-gradient-to-br ${project.cover}`}
+          className={`relative aspect-[16/9] overflow-hidden rounded-2xl sm:rounded-3xl ${project.cover}`}
         >
           {project.video ? (
             <ProjectVideo project={project} />

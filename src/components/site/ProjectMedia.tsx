@@ -1,13 +1,9 @@
 import { useState } from "react";
 import { projectName, type Project } from "@/data/portfolio";
 
-/** Fills its parent: photos and artwork edge to edge, app screens as an inset window. */
+/** Fills its parent: photos and artwork edge to edge, app screens whole and centered. */
 export function ProjectImage({ project, eager = false }: { project: Project; eager?: boolean }) {
-  if (!project.image) {
-    return (
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_55%)]" />
-    );
-  }
+  if (!project.image) return null;
   const img = {
     src: project.image.src,
     alt: project.image.alt,
@@ -15,8 +11,11 @@ export function ProjectImage({ project, eager = false }: { project: Project; eag
   };
   if (project.image.kind === "screen") {
     return (
-      <div className="absolute -bottom-px -right-px left-[7%] top-[9%] overflow-hidden rounded-tl-xl shadow-[0_24px_60px_-12px_rgb(0_0_0_/0.55)]">
-        <img {...img} className="h-full w-full object-cover object-left-top" />
+      <div className="absolute inset-[6%] flex items-center justify-center">
+        <img
+          {...img}
+          className="max-h-full max-w-full rounded-md shadow-[0_18px_40px_-16px_rgb(20_20_40_/0.45)] sm:rounded-xl"
+        />
       </div>
     );
   }

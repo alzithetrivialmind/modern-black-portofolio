@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Annotation, Arrow } from "@/components/site/Annotation";
-import { ProjectCover } from "@/components/site/ProjectCover";
+import { ProjectCard } from "@/components/site/ProjectCard";
 import { capabilities, projects } from "@/data/portfolio";
 
 export const Route = createFileRoute("/")({
@@ -114,20 +114,9 @@ function Index() {
           </Link>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2">
+        <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2">
           {featured.map((p, i) => (
-            <Link
-              key={p.slug}
-              to="/works/$slug"
-              params={{ slug: p.slug }}
-              className={`group block ${i === 0 ? "sm:col-span-2" : ""}`}
-            >
-              <ProjectCover project={p} wide={i === 0} />
-              <div className="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-sm">
-                <span className="text-ink">{p.role}</span>
-                <span className="text-ink-soft">{p.tags.join(" · ")}</span>
-              </div>
-            </Link>
+            <ProjectCard key={p.slug} project={p} wide={i === 0} />
           ))}
         </div>
       </section>

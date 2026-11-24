@@ -1,5 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ProjectCover } from "@/components/site/ProjectCover";
+import { createFileRoute } from "@tanstack/react-router";
+import { ProjectCard } from "@/components/site/ProjectCard";
 import { projects } from "@/data/portfolio";
 
 export const Route = createFileRoute("/works/")({
@@ -36,31 +36,9 @@ function Works() {
         </p>
       </header>
 
-      <div className="mt-16 grid gap-8 sm:grid-cols-2">
+      <div className="mt-16 grid gap-x-8 gap-y-14 sm:grid-cols-2">
         {projects.map((p, i) => (
-          <Link
-            key={p.slug}
-            to="/works/$slug"
-            params={{ slug: p.slug }}
-            className={`group block fade-up ${i % 3 === 0 ? "sm:col-span-2" : ""}`}
-            style={{ animationDelay: `${i * 60}ms` }}
-          >
-            <ProjectCover project={p} wide={i % 3 === 0} />
-            <div className="mt-4 flex flex-wrap items-center justify-between gap-2 text-sm">
-              <p className="text-ink">{p.role}</p>
-              <ul className="flex flex-wrap gap-1.5">
-                {p.tags.map((t) => (
-                  <li
-                    key={t}
-                    className="rounded-full border border-border bg-card px-2.5 py-0.5 text-xs text-ink-soft"
-                  >
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <p className="mt-3 max-w-xl text-sm text-ink-soft">{p.blurb}</p>
-          </Link>
+          <ProjectCard key={p.slug} project={p} wide={i % 3 === 0} />
         ))}
       </div>
     </section>

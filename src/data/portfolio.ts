@@ -17,7 +17,7 @@ export type Project = {
   role: string;
   year: string;
   tags: string[];
-  cover: string; // gradient behind app screens
+  cover: string; // background class behind the image
   image?: { src: string; alt: string; kind: "screen" | "full"; position?: string };
   video?: { youtubeId: string; title: string; caption: string };
   blurb: string;
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     role: "Founder & Developer",
     year: "2026",
     tags: ["Electron", "React", "TypeScript", "AI"],
-    cover: "from-[#2A1F6B] via-[#6D3BD1] to-[#B78BFA]",
+    cover: "bg-[#E3DDF4]",
     image: {
       src: "/works/snapculler.webp",
       alt: "SnapCuller grid view with a folder of photos",
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     role: "Software & IoT Engineer",
     year: "Palma Shipyard",
     tags: ["IoT", "Hardware integration", "Reporting"],
-    cover: "from-[#0F2027] via-[#1F4B5C] to-[#2C7A7B]",
+    cover: "bg-[#D9E6E4]",
     image: {
       src: "/works/bollard-pull.webp",
       alt: "Tugboat Cahaya 1603 under test with the live load reading on screen",
@@ -96,7 +96,7 @@ export const projects: Project[] = [
     role: "ERP Functional & Technical Consultant",
     year: "2022 — Now",
     tags: ["ERPNext", "Python", "MariaDB", "Linux"],
-    cover: "from-[#134E5E] via-[#2F7D6B] to-[#71B280]",
+    cover: "bg-[#0F3B3A]",
     image: {
       src: "/works/erpnext.svg",
       alt: "Diagram of stock issues traced back to the receipts they came from",
@@ -122,7 +122,7 @@ export const projects: Project[] = [
     role: "Full-stack Developer",
     year: "2026",
     tags: ["Next.js", "PostgreSQL", "Prisma", "Docker"],
-    cover: "from-[#8A3B12] via-[#D9772B] to-[#F7B955]",
+    cover: "bg-[#F3E2CB]",
     image: {
       src: "/works/cecs.webp",
       alt: "CECS dashboard with demo equipment data",
@@ -148,7 +148,7 @@ export const projects: Project[] = [
     role: "Full-stack Developer",
     year: "2026",
     tags: ["React", "PWA", "TypeScript"],
-    cover: "from-[#7FA8E8] via-[#4C7BDD] to-[#3B5BDB]",
+    cover: "bg-[#DAE4F5]",
     image: {
       src: "/works/nor-checklist.webp",
       alt: "NOR Checklist admin dashboard with demo vessels",
@@ -173,7 +173,7 @@ export const projects: Project[] = [
     role: "Developer",
     year: "2026",
     tags: ["FastAPI", "PostgreSQL", "Docker", "Webhooks"],
-    cover: "from-[#0F3D2E] via-[#1B5E46] to-[#2E8B66]",
+    cover: "bg-[#D8E8DE]",
     image: {
       src: "/works/attendance.webp",
       alt: "Fingerspot Attendance Hub with demo scans",
@@ -199,7 +199,7 @@ export const projects: Project[] = [
     role: "Website Developer",
     year: "2022 — Now",
     tags: ["WordPress", "Elementor", "cPanel"],
-    cover: "from-[#A1C4FD] via-[#7BB1F0] to-[#C2E9FB]",
+    cover: "bg-[#D9E6E4]",
     image: {
       src: "/works/palma.webp",
       alt: "Palma Shipyard website home page",
@@ -223,7 +223,7 @@ export const projects: Project[] = [
     role: "Developer & Creator",
     year: "2026",
     tags: ["React", "TypeScript", "Vite"],
-    cover: "from-[#3B2FA8] via-[#7C5CF0] to-[#E879C9]",
+    cover: "bg-[#E6DDF3]",
     image: {
       src: "/works/securebatch.webp",
       alt: "SecureBatch QR contact form",
@@ -248,7 +248,7 @@ export const projects: Project[] = [
     role: "Developer",
     year: "2025",
     tags: ["Laravel", "PHP", "Bootstrap"],
-    cover: "from-[#8FBF4D] via-[#5FA24A] to-[#3F8F4F]",
+    cover: "bg-[#F4F1E4]",
     image: {
       src: "/works/disciplinr.svg",
       alt: "Illustration of a week of time boxes, kept and missed",
